@@ -55,69 +55,76 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Hero Background */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Premium car wrap showcase"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
+      {/* Hero Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImage}
+          alt="Premium car wrap."
+          className="w-full h-full object-cover brightness-[0.65] contrast-[1.05]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(9,3,19,0.8) 0%, rgba(7, 5, 17, 0.75) 55%, rgba(10, 6, 17, 0.9) 75%, rgba(13, 12, 29, 0.97) 90%, rgba(8, 9, 17, 1) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-8">
+        <h1 className="text-6xl md:text-8xl font-bold tracking-tight animate-fade-up opacity-0">
+          <span className="bg-gradient-to-r from-[#5A4BFF] via-[#8B5CF6] to-[#00B2FF] bg-clip-text text-transparent">
+            Drip Coat
+          </span>
+        </h1>
+
+        <p className="text-2xl md:text-4xl font-light text-gray-300 max-w-4xl mx-auto animate-fade-up animate-delay-200 opacity-0">
+          Where <span className="font-semibold text-white">Precision Meets Passion</span>
+        </p>
+
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-fade-up animate-delay-300 opacity-0">
+          Premium vehicle wrapping and branding that transforms ordinary rides into extraordinary statements.
+          From full wraps to paint protection, we deliver craftsmanship that lasts.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-up animate-delay-400 opacity-0">
+          {/* Book Appointment Button */}
+          <button
+            onClick={() => navigate('/booking')}
+            className="bg-gradient-to-r from-[#4A41FF] via-[#7C4DFF] to-[#00A9FF]
+            text-white text-lg px-10 py-3 rounded-xl font-semibold
+            shadow-[0_0_15px_rgba(100,80,255,0.4)]
+            border border-[#4A41FF]/40 transition-all duration-300
+            hover:scale-105 hover:shadow-[0_0_25px_rgba(100,80,255,0.6)]"
+          >
+            Book Appointment
+          </button>
+
+          {/* View Services Button */}
+          <button
+            onClick={handleScrollToServices}
+            className="bg-black/60 text-white text-lg px-10 py-3 rounded-xl font-semibold
+            border border-[#5A4BFF]/50 backdrop-blur-sm
+            hover:bg-black/80 hover:border-[#7C4DFF]/70 hover:scale-105 transition-all duration-300"
+          >
+            View Services
+          </button>
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center space-y-8">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight animate-fade-up opacity-0">
-            <span className="text-gradient">Drip Coat</span>
-          </h1>
-          <p className="text-2xl md:text-4xl font-light text-muted-foreground max-w-4xl mx-auto animate-fade-up animate-delay-200 opacity-0">
-            Where <span className="text-shine font-semibold">Precision Meets Passion</span>
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-up animate-delay-300 opacity-0">
-            Premium vehicle wrapping and branding that transforms ordinary rides into extraordinary statements. 
-            From full wraps to paint protection, we deliver craftsmanship that lasts.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-up animate-delay-400 opacity-0">
-            <Button
-              variant="hero"
-              size="lg"
-              onClick={() => navigate("/booking")}
-              className="text-lg px-10 py-3 h-auto transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              Book Appointment
-            </Button>
-            <Button
-              variant="premium"
-              size="lg"
-              onClick={handleScrollToServices}
-              className="text-lg px-10 py-3 h-auto transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Services
-            </Button>
-          </div>
-
-          <TextType 
-            className="text-sm md:text-base text-muted-foreground/80 italic pt-4 animate-fade-in animate-delay-600 opacity-0"
-            text={[
-              "Turn your ride into a masterpiece with Drip Coat",
-              "Premium car wraps tailored for your style",
-              "Drive bold. Drive different.",
-            ]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="|"
-          />
-        </div>
+        <p className="text-xl md:text-base text-gray-400 italic pt-4 animate-fade-in animate-delay-600 opacity-0">
+          <TextType className="text-sm md:text-base text-muted-foreground/80 italic pt-4 animate-fade-in animate-delay-600 opacity-0" text={[ "Turn your ride into a masterpiece with Drip Coat.", "Premium car wraps tailored for your style.", "Drive bold. Drive different.", ]} typingSpeed={75} pauseDuration={1500} showCursor={true} cursorCharacter="|" />
+        </p>
+      </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-primary/50 rounded-full" />
+          <div className="w-6 h-10 border-2 border-[#5A4BFF]/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-[#5A4BFF]/50 rounded-full" />
           </div>
         </div>
       </section>
+
 
       {/* Services Section */}
       <ServicesSection servicesRef={servicesRef} />
