@@ -79,9 +79,10 @@ const Index = () => {
           </span>
         </h1>
 
-        <p className="text-2xl md:text-4xl font-light text-gray-300 max-w-4xl mx-auto animate-fade-up animate-delay-200 opacity-0">
-          Where <span className="font-semibold text-white">Precision Meets Passion</span>
-        </p>
+      <p className="text-base md:text-3xl text-gray-400 font-thin max-w-4xl mx-auto animate-fade-up animate-delay-200 opacity-0">
+        <span className="text-gray-400 font-light opacity-80">Where</span> 
+        <span className="text-white"> Precision Meets Passion</span>
+      </p>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-fade-up animate-delay-300 opacity-0">
           Premium vehicle wrapping and branding that transforms ordinary rides into extraordinary statements.
