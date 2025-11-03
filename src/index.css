@@ -1,26 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definition of the design system using CSS variables */
+/* --- Design System (Premium Lighter Dark Theme) --- */
 :root {
-  --background: 240 10% 6%;
+  /* Core colors (slightly lighter + more contrast) */
+  --background: 240 8% 14%;        /* balanced lighter dark */
   --foreground: 0 0% 98%;
 
-  --card: 240 8% 10%;
+  --card: 240 8% 18%;              /* slightly lighter for cards */
   --card-foreground: 0 0% 98%;
 
-  --popover: 240 8% 10%;
+  --popover: 240 8% 18%;
   --popover-foreground: 0 0% 98%;
 
   --primary: 217 91% 60%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 240 6% 15%;
+  --secondary: 240 6% 22%;         /* adds subtle separation */
   --secondary-foreground: 0 0% 98%;
 
-  --muted: 240 6% 18%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 240 5% 28%;             /* more contrast for subtle text */
+  --muted-foreground: 240 5% 72%;
 
   --accent: 271 91% 65%;
   --accent-foreground: 0 0% 100%;
@@ -28,34 +27,31 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 240 6% 20%;
-  --input: 240 6% 20%;
+  --border: 240 6% 28%;
+  --input: 240 6% 28%;
   --ring: 217 91% 60%;
 
   --radius: 0.75rem;
 
-  /* Gradients and shadows */
+  /* --- Gradients & Shadows --- */
   --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
-  --shadow-glow: 0 0 60px hsl(var(--primary) / 0.4);
-  --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
-  --shadow-elegant: 0 20px 60px -15px hsl(var(--primary) / 0.3);
+
+  --shadow-glow: 0 0 50px hsl(var(--primary) / 0.25);
+  --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+  --shadow-elegant: 0 16px 48px -12px hsl(var(--primary) / 0.25);
 }
 
-/* Base styles */
+/* --- Base Styles --- */
 body {
   background-color: hsl(var(--background) / 1);
   color: hsl(var(--foreground) / 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Utility classes for your custom CSS variables */
-.bg-background { background-color: hsl(var(--background) / 1); }
-.text-foreground { color: hsl(var(--foreground) / 1); }
-.border-border { border-color: hsl(var(--border) / 1); }
-
-/* Text gradient helpers */
+/* --- Text Effects --- */
 .text-gradient {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -63,23 +59,39 @@ body {
 }
 
 .text-shine {
-  background: linear-gradient(135deg, hsl(0 0% 80%), hsl(0 0% 100%) 50%, hsl(0 0% 80%));
+  background: linear-gradient(135deg, hsl(0 0% 85%), hsl(0 0% 100%) 50%, hsl(0 0% 85%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Animations */
-@keyframes fade-up { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
-@keyframes fade-in { from {opacity:0;} to {opacity:1;} }
-@keyframes scale-in { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
-@keyframes slide-up { from {transform:translateY(20px); opacity:0;} to {transform:translateY(0); opacity:1;} }
+/* --- Animations --- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation utilities */
 .animate-fade-up { animation: fade-up 0.8s ease-out forwards; }
 .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
 .animate-scale-in { animation: scale-in 0.5s ease-out forwards; }
 .animate-slide-up { animation: slide-up 0.6s ease-out forwards; }
 
-/* Shadows */
+/* --- Shadows --- */
 .glow-primary { box-shadow: var(--shadow-glow); }
 .card-shadow { box-shadow: var(--shadow-card); }
 .elegant-shadow { box-shadow: var(--shadow-elegant); }
