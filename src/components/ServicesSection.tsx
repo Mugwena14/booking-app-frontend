@@ -126,7 +126,12 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
       }}
       viewport={{ once: true }}
     >
-      <Card className="group relative border-none bg-card/40 backdrop-blur-md hover:bg-card/60 transition-all duration-500 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] overflow-hidden">
+        <Card
+        className="group relative border-none bg-[hsl(var(--card))]/100 backdrop-blur-xl
+        hover:bg-[hsl(var(--card))]/95 transition-all duration-500 rounded-2xl
+        shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]
+        hover:-translate-y-2 hover:scale-[1.02] overflow-hidden"
+      >
         <div className="flex flex-col items-center text-center p-8 space-y-6">
           {/* Icon */}
           <motion.div
@@ -136,22 +141,28 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
               stiffness: 200,
               damping: 10,
             }}
-            className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-all duration-300"
+            className="p-5 rounded-full bg-[hsl(var(--secondary))] group-hover:bg-[hsl(var(--secondary))/0.8]
+            shadow-[0_0_25px_hsl(var(--primary)_/_0.35)] transition-all duration-300"
           >
-            <service.icon className="w-8 h-8 text-primary" />
+            <service.icon
+              className="w-9 h-9 text-[hsl(var(--primary))] transition-all duration-300
+              group-hover:text-[hsl(var(--accent))]"
+            />
           </motion.div>
 
-          {/* Title + Description */}
-          <h3 className="text-xl font-semibold tracking-tight">
+          {/* Title */}
+          <h3 className="text-lg font-semibold tracking-tight text-white">
             {service.title}
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
+
+          {/* Description */}
+          <p className="text-[15px] text-gray-400 leading-relaxed">
             {service.description}
           </p>
 
           {/* Image Display */}
           <div className="relative w-full rounded-xl overflow-hidden mt-4 group">
-            <div className="aspect-[9/16] w-full bg-muted rounded-xl overflow-hidden">
+            <div className="aspect-[9/16] w-full bg-black/40 rounded-xl overflow-hidden">
               <img
                 src={service.image}
                 alt={service.title}
@@ -167,12 +178,13 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
                 rel="noopener noreferrer"
                 className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
-                <Play className="w-16 h-16 text-white drop-shadow-lg" />
+                <Play className="w-14 h-14 text-white drop-shadow-lg" />
               </a>
             )}
           </div>
         </div>
-      </Card>
+        </Card>
+
     </motion.div>
   );
 }

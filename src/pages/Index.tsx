@@ -79,10 +79,10 @@ const Index = () => {
           </span>
         </h1>
 
-      <p className="text-base md:text-3xl text-gray-400 font-thin max-w-4xl mx-auto animate-fade-up animate-delay-200 opacity-0">
-        <span className="text-gray-400 font-light opacity-80">Where</span> 
-        <span className="text-white"> Precision Meets Passion</span>
-      </p>
+        <p className="text-base md:text-3xl font-thin text-gray-400 max-w-4xl mx-auto animate-fade-up animate-delay-200 opacity-0">
+          <span className="text-gray-400">Where</span>
+          <span className="text-white font-medium"> Precision Meets Passion</span>
+        </p>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-fade-up animate-delay-300 opacity-0">
           Premium vehicle wrapping and branding that transforms ordinary rides into extraordinary statements.
@@ -144,7 +144,7 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
             <div className="space-y-3 animate-scale-in animate-delay-300 opacity-0">
-              <div className="text-5xl font-bold text-primary">
+              <div className="text-5xl font-bold text-gradient">
                 <CountUp
                   from={0}
                   to={5}
@@ -158,7 +158,7 @@ const Index = () => {
               <div className="text-lg text-muted-foreground">Years Experience</div>
             </div>
             <div className="space-y-3 animate-scale-in animate-delay-400 opacity-0">
-              <div className="text-5xl font-bold text-accent">
+              <div className="text-5xl font-bold text-gradient">
                 <CountUp
                   from={0}
                   to={50}
@@ -171,7 +171,7 @@ const Index = () => {
               <div className="text-lg text-muted-foreground">Vehicles Transformed</div>
             </div>
             <div className="space-y-3 animate-scale-in animate-delay-500 opacity-0">
-              <div className="text-5xl font-bold text-primary">
+              <div className="text-5xl font-bold text-gradient">
                 <CountUp
                   from={0}
                   to={100}
@@ -189,9 +189,8 @@ const Index = () => {
 
       <section className="py-28 px-6 bg-background relative overflow-hidden">
       {/* Background glow */}
-              <TestimonialsSection testimonials={testimonials} />
-
-    </section>
+        <TestimonialsSection testimonials={testimonials} />
+      </section>
 
 
       {/* CTA Section */}
@@ -206,25 +205,6 @@ const Index = () => {
                 Let's discuss your vision and create something extraordinary. 
                 Your dream wrap is just a conversation away.
               </p>
-              
-              {/* <div className="flex flex-wrap justify-center gap-6 pt-6">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-3 h-auto transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                  <Phone className="w-5 h-5" />
-                  Call Us
-                </Button>
-                <Button variant="premium" size="lg" className="text-lg px-8 py-3 h-auto transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                  <MessageCircle className="w-5 h-5" />
-                  WhatsApp
-                </Button>
-                <Button variant="premium" size="lg" className="text-lg px-8 py-3 h-auto transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                  <Mail className="w-5 h-5" />
-                  Email Us
-                </Button>
-                <Button variant="premium" size="lg" className="text-lg px-8 py-3 h-auto transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-                  <Music2 className="w-5 h-5" />
-                  TikTok
-                </Button>
-              </div> */}
             </div>
           </Card>
         </div>
