@@ -1,13 +1,5 @@
 import React, { CSSProperties, PropsWithChildren, useEffect, useId, useLayoutEffect, useRef } from 'react';
 
-type ElectricBorderProps = PropsWithChildren<{
-  color?: string;
-  speed?: number;
-  chaos?: number;
-  thickness?: number;
-  className?: string;
-  style?: CSSProperties;
-}>;
 
 function hexToRgba(hex: string, alpha = 1): string {
   if (!hex) return `rgba(0,0,0,${alpha})`;
