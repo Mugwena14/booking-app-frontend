@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import DarkVeil from "./DarkVeil";
-import { Copy } from "lucide-react"; 
+import { Copy } from "lucide-react";
 
 export default function BookingSummaryPage() {
   const location = useLocation();
@@ -20,7 +20,7 @@ export default function BookingSummaryPage() {
 
   if (!booking) {
     return (
-      <div style={{ width: "100%", height: "600px", position: "relative" }}>
+      <div style={{ width: "100%", height: "800px", position: "relative" }}>
         <DarkVeil />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-white/6 p-6 rounded-xl text-center">
@@ -62,9 +62,17 @@ export default function BookingSummaryPage() {
               className="flex items-center gap-2 px-3 py-1 text-sm bg-sky-600 hover:bg-sky-700 text-white rounded transition"
             >
               <Copy size={16} />
-              {copied ? "Copied!" : "Copy"}
+              {/* Desktop label */}
+              <span className="hidden md:inline">{copied ? "Copied!" : "Copy"}</span>
             </button>
           </div>
+
+          {/* Mobile “Copied!” toast */}
+          {copied && (
+            <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-sky-600/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm shadow-lg md:hidden animate-fade-in-out">
+              Copied!
+            </div>
+          )}
 
           <div className="mb-2">
             <div className="text-sm text-muted-foreground">Service</div>

@@ -22,7 +22,7 @@ export default function AdminLayout() {
   };
 
   return (
-    <div className="flex min-h-screen text-white relative">
+    <div className="flex min-h-screen max-w-screen text-white relative">
       {/* Background */}
       <div className="absolute inset-0">
         <DarkVeil />
