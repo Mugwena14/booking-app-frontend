@@ -194,87 +194,85 @@ const Index = () => {
 
 
       {/* CTA Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto animate-fade-up opacity-0">
-          <Card className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-primary/20 elegant-shadow transition-all duration-500 hover:scale-[1.01]">
-            <div className="p-12 text-center space-y-8">
-              <h2 className="text-4xl md:text-5xl font-bold">
-                Ready to Make a Statement?
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Let's discuss your vision and create something extraordinary. 
-                Your dream wrap is just a conversation away.
-              </p>
-            </div>
-          </Card>
-        </div>
-      </section>
+          <section className="py-24 px-6 relative overflow-hidden">
+            {/* Glow Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent blur-3xl opacity-60" />
 
-      {/* Footer */}
-        <footer className="py-12 px-6 border-t border-primary/10">
-          <div className="max-w-7xl mx-auto text-center space-y-4">
-            <p className="text-2xl font-bold text-gradient">Drip Coat</p>
-            <p className="text-muted-foreground">
-              Premium Vehicle Wrapping & Branding
-            </p>
-
-            <div className="flex justify-center gap-6 pt-4">
-              {/* Phone */}
-              <a
-                href="tel:+1234567890"
-                className="text-muted-foreground hover:text-primary transition-colors"
+            <div className="max-w-4xl mx-auto relative animate-fade-up opacity-0">
+              <div
+                className="bg-[rgba(11,13,24,0.7)] border border-blue-900/30 
+                backdrop-blur-xl rounded-2xl p-12 text-center shadow-[0_0_35px_-10px_rgba(0,0,255,0.25)] 
+                transition-all duration-500 hover:shadow-[0_0_55px_-10px_rgba(0,0,255,0.4)]"
               >
-                <Phone className="w-5 h-5" />
-              </a>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+                  Ready to Make a Statement?
+                </h2>
+                <p className="text-lg md:text-xl text-gray-400 mt-4">
+                  Let’s discuss your vision and create something extraordinary.
+                  Your dream wrap is just a conversation away.
+                </p>
+              </div>
+  </div>
+</section>
 
-              {/* Email */}
-              <a
-                href="mailto:info@drip Coat.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
+{/* Footer */}
+<footer className="py-14 px-6 border-t border-blue-900/20 bg-[rgba(9,9,16,0.9)] backdrop-blur-sm">
+  <div className="max-w-7xl mx-auto text-center space-y-4">
+    <p className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+      Drip Coat
+    </p>
+    <p className="text-gray-400">
+      Premium Vehicle Wrapping & Branding
+    </p>
 
-              {/* WhatsApp SVG */}
-              <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-green-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path d="M12 2C6.477 2 2 6.243 2 11.5c0 1.92.553 3.693 1.515 5.203L2 22l5.505-1.44A9.77 9.77 0 0012 21c5.523 0 10-4.243 10-9.5S17.523 2 12 2zm0 17.5a8.1 8.1 0 01-4.136-1.13l-.296-.175-3.266.853.871-3.071-.195-.312A7.015 7.015 0 014.5 11.5C4.5 7.358 7.962 4 12 4s7.5 3.358 7.5 7.5S16.038 19.5 12 19.5z" />
-                </svg>
-              </a>
+    <div className="flex justify-center gap-8 pt-4">
+      {/* Phone */}
+      <a
+        href="tel:+1234567890"
+        className="text-gray-400 hover:text-blue-400 transition-colors"
+      >
+        <Phone className="w-5 h-5" />
+      </a>
 
-              {/* TikTok SVG */}
-              <a
-                href="https://tiktok.com/@drip Coat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-pink-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path d="M12.5 2h3.4a4.6 4.6 0 004.6 4.6V10a8.6 8.6 0 01-4.6-1.4v6.2A7.2 7.2 0 018.7 22 7.2 7.2 0 011.5 14.8a7.2 7.2 0 017.2-7.2c.3 0 .5 0 .8.1v3.4a4 4 0 00-.8-.1 3.8 3.8 0 00-3.8 3.8 3.8 3.8 0 007.6 0V2z" />
-                </svg>
-              </a>
-            </div>
+      {/* Email */}
+      <a
+        href="mailto:info@dripcoat.com"
+        className="text-gray-400 hover:text-blue-400 transition-colors"
+      >
+        <Mail className="w-5 h-5" />
+      </a>
 
-            <p className="text-sm text-muted-foreground/60 pt-4">
-              © 2025 Drip Coat. All rights reserved.
-            </p>
-          </div>
-        </footer>
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 hover:text-green-500 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M12 2C6.477 2 2 6.243 2 11.5c0 1.92.553 3.693 1.515 5.203L2 22l5.505-1.44A9.77 9.77 0 0012 21c5.523 0 10-4.243 10-9.5S17.523 2 12 2zm0 17.5a8.1 8.1 0 01-4.136-1.13l-.296-.175-3.266.853.871-3.071-.195-.312A7.015 7.015 0 014.5 11.5C4.5 7.358 7.962 4 12 4s7.5 3.358 7.5 7.5S16.038 19.5 12 19.5z" />
+        </svg>
+      </a>
+
+      {/* TikTok */}
+      <a
+        href="https://tiktok.com/@dripcoat"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 hover:text-pink-500 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M12.5 2h3.4a4.6 4.6 0 004.6 4.6V10a8.6 8.6 0 01-4.6-1.4v6.2A7.2 7.2 0 018.7 22 7.2 7.2 0 011.5 14.8a7.2 7.2 0 017.2-7.2c.3 0 .5 0 .8.1v3.4a4 4 0 00-.8-.1 3.8 3.8 0 00-3.8 3.8 3.8 3.8 0 007.6 0V2z" />
+        </svg>
+      </a>
+    </div>
+
+    <p className="text-sm text-gray-500 pt-4">
+      © 2025 Drip Coat. All rights reserved.
+    </p>
+  </div>
+</footer>
+
     </div>
   );
 };

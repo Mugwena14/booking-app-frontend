@@ -18,7 +18,7 @@ export default function ServicesSection({
       description:
         "Transform your ride with precision-crafted wraps that turn heads and protect your investment.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7564698438407834936",
-      image: "../src/assets/full-wrap.jpeg",
+      image: "../public/full-wrap.jpeg",
     },
     {
       icon: Shield,
@@ -27,7 +27,7 @@ export default function ServicesSection({
         "Premium PPF that shields your vehicle from chips, scratches, and the elements with invisible armor.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7468638222260460801",
       image:
-        "../src/assets/ppf.jpeg",
+        "../public/ppf.jpeg",
     },
     {
       icon: Palette,
@@ -36,7 +36,7 @@ export default function ServicesSection({
         "Customize your wheels with bold, durable rim colors that match your style and make your car stand out.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7457648228412325129",
       image:
-        "../src/assets/Rims.png",
+        "../public/Rims.png",
     },
     {
       icon: Truck,
@@ -45,7 +45,7 @@ export default function ServicesSection({
         "Elevate your business presence with cohesive, eye-catching designs across your entire fleet.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7542591121458900225",
       image:
-        "../src/assets/fleet-branding.png",
+        "../public/fleet-branding.png",
     },
   ];
 

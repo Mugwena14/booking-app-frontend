@@ -169,7 +169,7 @@ export default function BookingPage() {
   // UI
   // ----------------------------
   return (
-    <div style={{ width: "100%", height: "600px", position: "relative" }}>
+    <div style={{ width: "100%", height: "800px", position: "relative" }}>
       <DarkVeil />
       <div className="absolute inset-0 p-6 overflow-auto">
         <div className="max-w-4xl mx-auto bg-white/6 backdrop-blur rounded-2xl p-6 shadow-lg">
@@ -189,29 +189,48 @@ export default function BookingPage() {
           <AnimatePresence mode="wait">
             {/* Step 0 - Service */}
             {step === 0 && (
-              <motion.div key="step-service" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <motion.div
+                key="step-service"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
                 <h2 className="text-lg font-semibold mb-3">Choose a Service</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {services.map(s => {
-                    const isSelected = service?._id === s._id;
-                    return (
-                      <button key={s._id} onClick={() => dispatch(selectService(s))} className={`p-4 rounded-xl transition text-left ${isSelected ? "ring-2 ring-sky-500 bg-sky-600/20" : "bg-white/5 hover:bg-white/10"}`}>
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <div className="text-lg font-medium">{s.title}</div>
-                            <div className="text-sm text-gray-400">{s.description}</div>
+
+                {services.length === 0 ? (
+                  <div className="text-gray-400 text-sm animate-pulse">Loading services...</div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {services.map((s) => {
+                      const isSelected = service?._id === s._id;
+                      return (
+                        <button
+                          key={s._id}
+                          onClick={() => dispatch(selectService(s))}
+                          className={`p-4 rounded-xl transition text-left ${
+                            isSelected
+                              ? "ring-2 ring-sky-500 bg-sky-600/20"
+                              : "bg-white/5 hover:bg-white/10"
+                          }`}
+                        >
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <div className="text-lg font-medium">{s.title}</div>
+                              <div className="text-sm text-gray-400">{s.description}</div>
+                            </div>
+                            <div className="text-right">
+                              <div className="font-semibold">R {s.price}</div>
+                              <div className="text-sm">{s.duration} mins</div>
+                            </div>
                           </div>
-                          <div className="text-right">
-                            <div className="font-semibold">R {s.price}</div>
-                            <div className="text-sm">{s.duration} mins</div>
-                          </div>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </motion.div>
             )}
+
 
             {/* Step 1 - Date & Time */}
             {step === 1 && (
