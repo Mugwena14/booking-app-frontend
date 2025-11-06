@@ -22,7 +22,6 @@ export default function ServicesPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Fetch all services on mount
   useEffect(() => {
     fetchServices();
   }, []);
@@ -84,8 +83,6 @@ export default function ServicesPage() {
       setLoading(true);
       await axios.delete(`${API_URL}/${id}`);
       setServices((prev) => prev.filter((s) => s._id !== id));
-    } catch (err) {
-      setError(err.response?.data?.message || "Failed to delete service.");
     } finally {
       setLoading(false);
     }
@@ -134,13 +131,20 @@ export default function ServicesPage() {
     >
       <h1 className="text-3xl font-bold">Services Management</h1>
 
+      {/* Form */}
       <Card className="p-6 bg-black/50 border-white/10 rounded-2xl shadow-md space-y-4">
-        <p className="text-gray-400">Add, edit, delete, or seed default services.</p>
+        <p className="text-gray-400">Add, edit or delete services.</p>
 
         {error && (
           <div className="flex justify-between items-center bg-red-900/20 border border-red-400/30 p-2 rounded">
             <p className="text-red-400">{error}</p>
-            <Button size="sm" onClick={clearError}>Clear</Button>
+            <Button
+              size="sm"
+              onClick={clearError}
+              className="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white px-3 py-1 rounded-md shadow-md"
+            >
+              Clear
+            </Button>
           </div>
         )}
 
@@ -173,7 +177,7 @@ export default function ServicesPage() {
               onChange={(e) => handleChange("duration", e.target.value)}
             />
           </div>
-          <div>
+          {/* <div>
             <Label>Image URL</Label>
             <Input
               value={form.image}
@@ -186,19 +190,21 @@ export default function ServicesPage() {
               value={form.videoUrl}
               onChange={(e) => handleChange("videoUrl", e.target.value)}
             />
-          </div>
+          </div> */}
         </div>
 
-        <div className="flex gap-2">
-          <Button onClick={handleSubmit} disabled={loading}>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Button
+            onClick={handleSubmit}
+            disabled={loading}
+            className="bg-gradient-to-r from-sky-600 to-blue-500 hover:from-blue-500 hover:to-sky-600 text-white px-4 py-2 rounded-md shadow-md w-full sm:w-auto"
+          >
             {editingId ? "Update Service" : "Create Service"}
-          </Button>
-          <Button onClick={seedServices} disabled={loading} variant="outline">
-            Seed Default Services
           </Button>
         </div>
       </Card>
 
+      {/* Services List */}
       <Card className="p-6 bg-black/50 border-white/10 rounded-2xl shadow-md space-y-4">
         <h2 className="text-xl font-semibold">All Services</h2>
         {loading && <p className="text-gray-400">Loading...</p>}
@@ -207,26 +213,33 @@ export default function ServicesPage() {
           {services.length === 0 && !loading && (
             <p className="text-gray-500">No services available.</p>
           )}
+
           {services.map((s) => (
             <div
               key={s._id}
-              className="p-3 bg-white/5 rounded-lg border border-white/10 flex justify-between items-center"
+              className="p-3 bg-white/5 rounded-lg border border-white/10 flex flex-col sm:flex-row sm:justify-between sm:items-center"
             >
-              <div>
+              <div className="space-y-1">
                 <p className="font-medium">{s.title}</p>
                 <p className="text-sm text-gray-400">{s.description}</p>
                 <p className="text-sm text-gray-400">
                   Price: {s.price} — Duration: {s.duration} min
                 </p>
               </div>
-              <div className="flex gap-2">
-                <Button size="sm" onClick={() => handleEdit(s)}>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-2 mt-3 sm:mt-0 sm:justify-end">
+                <Button
+                  size="sm"
+                  onClick={() => handleEdit(s)}
+                  className="bg-gradient-to-r from-sky-600 to-blue-500 hover:from-blue-500 hover:to-sky-600 text-white px-4 py-2 rounded-md shadow-md w-full sm:w-auto"
+                >
                   Edit
                 </Button>
                 <Button
                   size="sm"
-                  variant="destructive"
                   onClick={() => deleteService(s._id)}
+                  className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white px-4 py-2 rounded-md shadow-md w-full sm:w-auto"
                 >
                   Delete
                 </Button>
