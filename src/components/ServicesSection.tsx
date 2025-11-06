@@ -2,9 +2,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Sparkles, Shield, Palette, Truck, Play } from "lucide-react";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchServices } from "@/store/slices/servicesSlice";
 
 export default function ServicesSection({
   servicesRef,
@@ -18,7 +15,7 @@ export default function ServicesSection({
       description:
         "Transform your ride with precision-crafted wraps that turn heads and protect your investment.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7564698438407834936",
-      image: "../public/full-wrap.jpeg",
+      image: "/images/full-wrap.jpeg",
     },
     {
       icon: Shield,
@@ -26,8 +23,7 @@ export default function ServicesSection({
       description:
         "Premium PPF that shields your vehicle from chips, scratches, and the elements with invisible armor.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7468638222260460801",
-      image:
-        "../public/ppf.jpeg",
+      image: "/images/ppf.jpeg",
     },
     {
       icon: Palette,
@@ -35,8 +31,7 @@ export default function ServicesSection({
       description:
         "Customize your wheels with bold, durable rim colors that match your style and make your car stand out.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7457648228412325129",
-      image:
-        "../public/Rims.png",
+      image: "/images/Rims.png",
     },
     {
       icon: Truck,
@@ -44,8 +39,7 @@ export default function ServicesSection({
       description:
         "Elevate your business presence with cohesive, eye-catching designs across your entire fleet.",
       videoUrl: "https://www.tiktok.com/@angeldustza/video/7542591121458900225",
-      image:
-        "../public/fleet-branding.png",
+      image: "/images/fleet-branding.png",
     },
   ];
 
@@ -126,7 +120,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
       }}
       viewport={{ once: true }}
     >
-        <Card
+      <Card
         className="group relative border-none bg-[hsl(var(--card))]/100 backdrop-blur-xl
         hover:bg-[hsl(var(--card))]/95 transition-all duration-500 rounded-2xl
         shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)]
@@ -183,8 +177,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
             )}
           </div>
         </div>
-        </Card>
-
+      </Card>
     </motion.div>
   );
 }
